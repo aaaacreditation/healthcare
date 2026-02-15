@@ -18,11 +18,13 @@ export const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="font-bold text-2xl text-[#0a4373] tracking-tighter">
-                        AAA Healthcare
-                    </div>
+                    <img
+                        src="/logo.png"
+                        alt="AAA Healthcare Logo"
+                        className="h-16 w-auto object-contain"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
