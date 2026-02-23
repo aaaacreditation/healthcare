@@ -1,9 +1,49 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Section } from './ui/Section';
-import { Button } from './ui/Button';
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, CheckCircle, Loader2 } from 'lucide-react';
 
 export const Contact = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setError('');
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            organization: formData.get('organization'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const res = await fetch('/api/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (!res.ok) throw new Error('Submission failed');
+
+            setIsSuccess(true);
+            form.reset();
+            setTimeout(() => setIsSuccess(false), 4000);
+        } catch {
+            setError('Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <Section className="bg-gray-50" id="contact">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -64,36 +104,59 @@ export const Contact = () => {
                 {/* Contact Form */}
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <h3 className="text-xl font-semibold mb-6">Send an Inquiry</h3>
-                    <form className="space-y-4">
+
+                    {isSuccess && (
+                        <div className="mb-6 flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md text-sm">
+                            <CheckCircle className="h-5 w-5 shrink-0" />
+                            Thank you! Your inquiry has been submitted successfully.
+                        </div>
+                    )}
+
+                    {error && (
+                        <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md text-sm">
+                            {error}
+                        </div>
+                    )}
+
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                <input type="text" id="first-name" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                             </div>
                             <div>
-                                <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                <input type="text" id="last-name" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                             </div>
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                            <input type="email" id="email" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                            <label htmlFor="contactEmail" className="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
+                            <input type="email" id="contactEmail" name="email" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                         </div>
 
                         <div>
                             <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1">Organization Name</label>
-                            <input type="text" id="organization" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                            <input type="text" id="organization" name="organization" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all"></textarea>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message*</label>
+                            <textarea id="message" name="message" required rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all"></textarea>
                         </div>
 
-                        <Button size="lg" className="w-full">
-                            Send Inquiry
-                        </Button>
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full h-12 px-8 text-base font-semibold rounded-md inline-flex items-center justify-center transition-all shadow-sm text-white bg-[#0a4373] hover:bg-[#08365d] disabled:opacity-60"
+                        >
+                            {isSubmitting ? (
+                                <>
+                                    <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                                    Sending...
+                                </>
+                            ) : 'Send Inquiry'}
+                        </button>
                     </form>
                 </div>
             </div>
