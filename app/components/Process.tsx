@@ -23,30 +23,26 @@ export const Process = () => {
                 </p>
             </div>
 
-            <div className="relative">
-                {/* Vertical Line for Desktop */}
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+            <div className="relative mt-12 hidden lg:block">
+                {/* Horizontal Line for Desktop */}
+                <div className="absolute top-6 left-[8%] right-[8%] h-0.5 bg-gray-200" />
+            </div>
 
-                <div className="space-y-12 lg:space-y-0">
-                    {steps.map((step, index) => (
-                        <div key={step.name} className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
-                            <div className="flex-1 w-full lg:w-1/2 p-6">
-                                <div className={`bg-white p-6 rounded-xl shadow-sm border border-gray-100 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right'}`}>
-                                    <h3 className="text-xl font-bold text-[#0a4373] mb-2">{index + 1}. {step.name}</h3>
-                                    <p className="text-gray-600">{step.description}</p>
-                                </div>
-                            </div>
-
-                            <div className="relative flex items-center justify-center w-12 h-12 bg-[#0a4373] rounded-full text-white font-bold z-10 shrink-0 my-4 lg:my-0">
-                                {index + 1}
-                            </div>
-
-                            <div className="flex-1 w-full lg:w-1/2 p-6">
-                                {/* Empty space for the alternating layout */}
-                            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative">
+                {steps.map((step, index) => (
+                    <div key={step.name} className="relative flex flex-col items-center">
+                        {/* Number Circle */}
+                        <div className="flex items-center justify-center w-12 h-12 bg-[#0a4373] rounded-full text-white font-bold z-10 mb-6 shrink-0 shadow-md ring-4 ring-gray-50">
+                            {index + 1}
                         </div>
-                    ))}
-                </div>
+
+                        {/* Content */}
+                        <div className="bg-white p-6 rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 text-center w-full h-full flex flex-col items-center flex-1 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-shadow">
+                            <h3 className="text-base font-bold text-[#0a4373] mb-3 leading-snug">{step.name}</h3>
+                            <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </Section>
     );
