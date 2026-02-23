@@ -7,7 +7,6 @@ const images = [
     { src: '/images/gallery-1.jpeg', alt: 'AAA Healthcare Accreditation 1' },
     { src: '/images/gallery-2.jpeg', alt: 'AAA Healthcare Accreditation 2' },
     { src: '/images/gallery-3.jpeg', alt: 'AAA Healthcare Accreditation 3' },
-    { src: '/images/gallery-4.jpeg', alt: 'AAA Healthcare Accreditation 4' },
     { src: '/images/gallery-5.jpeg', alt: 'AAA Healthcare Accreditation 5' },
 ];
 
