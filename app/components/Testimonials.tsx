@@ -1,76 +1,103 @@
 import React from 'react';
 import { Section } from './ui/Section';
-import { Building2 } from 'lucide-react';
 
-const testimonials = [
+const clinics = [
     {
-        organization: "City General Hospital",
-        country: "United Arab Emirates",
-        type: "Hospital Accreditation",
-        year: "2024",
-        logoConfig: "bg-blue-100 text-blue-600"
+        name: "Domus Salutis Clinic",
+        location: "Legnago - Italy",
+        flag: "/accreditedorganizations/flag/italy.png",
+        logo: "/accreditedorganizations/domus.jpeg",
+        layout: "left"
     },
     {
-        organization: "Royal Care Clinic",
-        country: "Saudi Arabia",
-        type: "Ambulaory Care Center",
-        year: "2023",
-        logoConfig: "bg-green-100 text-green-600"
+        name: "Debeauty Clinic",
+        location: "Colorado - USA",
+        flag: "/accreditedorganizations/flag/usa.webp",
+        logo: "/accreditedorganizations/debeauty.jpeg",
+        layout: "right"
     },
     {
-        organization: "Sunrise Rehabilitation",
-        country: "Egypt",
-        type: "Rehabilitation Center",
-        year: "2024",
-        logoConfig: "bg-orange-100 text-orange-600"
+        name: "Monarch Master Injectors",
+        location: "Texas - USA",
+        flag: "/accreditedorganizations/flag/usa.webp",
+        logo: "",
+        layout: "left"
     },
     {
-        organization: "Elite Dental Group",
-        country: "Kuwait",
-        type: "Dental Center",
-        year: "2023",
-        logoConfig: "bg-purple-100 text-purple-600"
+        name: "ZSK Aesthetics",
+        location: "Islamabad - Pakistan",
+        flag: "",
+        logo: "",
+        layout: "right"
+    },
+    {
+        name: "Indian Medical Aesthetic",
+        location: "Mumbai - India",
+        flag: "",
+        logo: "",
+        layout: "left"
+    },
+    {
+        name: "Millennia Wellness",
+        location: "Texas - USA",
+        flag: "/accreditedorganizations/flag/usa.webp",
+        logo: "",
+        layout: "right"
     }
 ];
 
 export const Testimonials = () => {
     return (
         <Section className="bg-white" id="testimonials">
-            <div className="mx-auto max-w-2xl lg:text-center mb-16">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    Trusted by Leading Institutions
-                </h2>
-                <p className="mt-4 text-lg text-gray-600">
-                    Join a growing network of accredited healthcare providers.
-                </p>
+            <div className="mx-auto max-w-4xl text-center mb-16">
+                <div className="bg-[#0a4373] text-white py-4 px-8 md:px-16 rounded-3xl inline-block shadow-md">
+                    <h2 className="text-xl md:text-2xl font-bold tracking-wide">
+                        Be Part of our Accredited Cosmetology Clinics
+                    </h2>
+                </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {testimonials.map((item, index) => (
-                    <div key={index} className="flex flex-col items-center p-6 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow">
-                        <div className={`h-16 w-16 mb-4 rounded-full flex items-center justify-center ${item.logoConfig}`}>
-                            <Building2 className="h-8 w-8" />
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900 text-center">{item.organization}</h3>
-                        <p className="text-sm text-gray-500 mb-2">{item.country}</p>
-                        <div className="mt-auto pt-4 border-t border-gray-100 w-full text-center">
-                            <span className="block text-xs font-semibold uppercase tracking-wide text-[#0a4373]">{item.type}</span>
-                            <span className="block text-xs text-gray-400 mt-1">Accredited {item.year}</span>
-                        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16 max-w-6xl mx-auto px-4">
+                {clinics.map((clinic, index) => (
+                    <div key={index} className="flex items-center justify-between w-full">
+                        {clinic.layout === 'left' ? (
+                            <>
+                                {/* Flag */}
+                                <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full overflow-hidden flex items-center justify-center bg-transparent">
+                                    {clinic.flag ? <img src={clinic.flag} alt="Flag" className="w-full h-full object-cover" /> : <div className="w-10 h-10 rounded-full bg-gray-200"></div>}
+                                </div>
+                                {/* Name */}
+                                <div className="flex-1 px-4 text-center">
+                                    <h3 className="text-base md:text-lg font-bold text-[#0a4373]">{clinic.name}</h3>
+                                    <p className="text-xs md:text-sm text-gray-500">{clinic.location}</p>
+                                </div>
+                                {/* Logo */}
+                                <div className="w-20 md:w-24 h-16 shrink-0 flex items-center justify-end">
+                                    {clinic.logo ? <img src={clinic.logo} alt="Logo" className="max-w-full max-h-full object-contain" /> : <div className="text-xs text-transparent">Logo</div>}
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                {/* Logo */}
+                                <div className="w-20 md:w-24 h-16 shrink-0 flex items-center justify-start">
+                                    {clinic.logo ? <img src={clinic.logo} alt="Logo" className="max-w-full max-h-full object-contain" /> : <div className="text-xs text-transparent">Logo</div>}
+                                </div>
+                                {/* Name */}
+                                <div className="flex-1 px-4 text-center">
+                                    <h3 className="text-base md:text-lg font-bold text-[#0a4373]">{clinic.name}</h3>
+                                    <p className="text-xs md:text-sm text-gray-500">{clinic.location}</p>
+                                </div>
+                                {/* Flag */}
+                                <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full overflow-hidden flex items-center justify-center bg-transparent">
+                                    {clinic.flag ? <img src={clinic.flag} alt="Flag" className="w-full h-full object-cover" /> : <div className="w-10 h-10 rounded-full bg-gray-200"></div>}
+                                </div>
+                            </>
+                        )}
                     </div>
                 ))}
             </div>
 
-            {/* Logo Grid Placeholder */}
-            <div className="mt-16 pt-8 border-t border-gray-100">
-                <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">Partnering with Excellence</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 grayscale">
-                    {/* Placeholders for logos */}
-                    {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="h-12 bg-gray-200 rounded animate-pulse"></div>
-                    ))}
-                </div>
-            </div>
+            {/* The "Partnering with Excellence" section has been removed entirely */}
         </Section>
     );
 };
