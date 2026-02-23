@@ -39,9 +39,9 @@ export const Hero = () => {
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up-delay-1">
-                            Accreditation That Elevates Healthcare{' '}
+                            Accreditation Designed for{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
-                                Performance & Trust
+                                Sustainable Healthcare Excellence
                             </span>
                         </h1>
 

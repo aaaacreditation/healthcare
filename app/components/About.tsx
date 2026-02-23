@@ -12,12 +12,10 @@ export const About = () => {
                         Driving Excellence in Healthcare
                     </h2>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        AAA provides accreditation to the healthcare sector in accordance with the AAA Accreditation Standards for Healthcare Facilities.
-                        The AAA standards have been assessed and accredited by the International Society for Quality in Health Care (ISQua EEA)
-                        against the Guidelines and Principles for the Development of Health and Social Care Standards, 5th Edition, Version 1.0, September 2018.
+                        The American Accreditation Association (AAA) stands as an independent, International Society for Quality in Health Care (ISQua) recognized accreditation body having its credibility backed by recognition from the US government.
                     </p>
                     <p className="mt-4 text-lg leading-8 text-gray-600">
-                        This means that the development of and content of AAA’s Accreditation Standards for Healthcare Facilities has been assessed and found to meet international best practice requirements.
+                        AAA’s reach extends across 53 countries, bringing a consistent, world-class standard of excellence to diverse industries. At its core, AAA is deeply committed to healthcare ensuring hospitals, clinics, and medical institutions meet the highest benchmarks of safety, service, and patient care.
                     </p>
                 </div>
 

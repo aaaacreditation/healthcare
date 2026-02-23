@@ -45,8 +45,7 @@ export const GlobalPresence = () => {
                     <div>
                         <h3 className="text-2xl font-bold mb-4">Leadership & Governance</h3>
                         <p className="text-gray-300">
-                            At its core, AAA is deeply committed to healthcare ensuring hospitals, clinics, and medical institutions meet the highest benchmarks of safety, service, and patient care.
-                            AAA’s story is one of connection, linking institutions to global best practices, fostering confidence in every certificate issued, and ultimately, building a new generation of trust.
+                            AAA’s reach extends across 53 countries, bringing a consistent, world-class standard of excellence to diverse industries. At its core, AAA is deeply committed to healthcare ensuring hospitals, clinics, and medical institutions meet the highest benchmarks of safety, service, and patient care. AAA’s story is one of connection, linking institutions to global best practices, fostering confidence in every certificate issued, and ultimately, building a new generation of trust.
                         </p>
                     </div>
                     <div className="relative">
