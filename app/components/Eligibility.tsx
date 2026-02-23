@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
 import { CheckCircle2, FileText } from 'lucide-react';
+import { ApplicationModal } from './ApplicationModal';
 
 const eligibleEntities = [
     "Public & private hospitals",
@@ -14,6 +15,8 @@ const eligibleEntities = [
 ];
 
 export const Eligibility = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <Section className="bg-[#0a4373] text-white" id="eligibility">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -38,6 +41,7 @@ export const Eligibility = () => {
                     <h3 className="text-2xl font-bold mb-6 text-center text-gray-900">Ready to Take the Next Step?</h3>
                     <div className="flex flex-col gap-4">
                         <button
+                            onClick={() => setIsModalOpen(true)}
                             className="w-full h-12 px-8 text-base font-medium rounded-md inline-flex items-center justify-center transition-colors shadow-sm"
                             style={{ backgroundColor: '#0a4373', color: '#ffffff' }}
                             onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#08365d'; }}
@@ -57,6 +61,7 @@ export const Eligibility = () => {
                     </div>
                 </div>
             </div>
+            <ApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </Section>
     );
 };

@@ -1,7 +1,10 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
 import { ShieldCheck, ClipboardCheck, Zap, Globe, TrendingUp, Plane } from 'lucide-react';
+import { ApplicationModal } from './ApplicationModal';
 
 const features = [
     {
@@ -37,6 +40,8 @@ const features = [
 ];
 
 export const WhyAAA = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <Section className="bg-white" id="why-aaa">
             <div className="mx-auto max-w-2xl lg:text-center">
@@ -66,10 +71,11 @@ export const WhyAAA = () => {
                 </dl>
             </div>
             <div className="mt-16 flex justify-center">
-                <Button size="lg">
+                <Button size="lg" onClick={() => setIsModalOpen(true)}>
                     Start your accreditation journey
                 </Button>
             </div>
+            <ApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </Section>
     );
 };
