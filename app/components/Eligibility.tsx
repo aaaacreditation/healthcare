@@ -8,6 +8,7 @@ import { ApplicationModal } from './ApplicationModal';
 
 const eligibleEntities = [
     "Public & private hospitals",
+    "Specialty clinics",
     "Multi-specialty clinics",
     "Dental clinics",
     "Day care surgery centers",
@@ -49,7 +50,10 @@ export const Eligibility = () => {
                         >
                             Apply for Hospital Accreditation
                         </button>
-                        <button
+                        <a
+                            href="https://aaa-accreditation.org/healthcare-accreditation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full h-12 px-8 text-base font-medium rounded-md inline-flex items-center justify-center transition-colors border-2"
                             style={{ borderColor: '#0a4373', color: '#0a4373', backgroundColor: 'transparent' }}
                             onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#f0f7ff'; }}
@@ -57,7 +61,7 @@ export const Eligibility = () => {
                         >
                             <FileText className="mr-2 h-5 w-5" />
                             Healthcare Standards – Overview PDF
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
