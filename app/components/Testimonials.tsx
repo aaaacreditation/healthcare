@@ -26,14 +26,14 @@ const clinics = [
     {
         name: "ZSK Aesthetics",
         location: "Islamabad - Pakistan",
-        flag: "",
+        flag: "/accreditedorganizations/flag/pakistan.webp",
         logo: "",
         layout: "right"
     },
     {
         name: "Indian Medical Aesthetic",
         location: "Mumbai - India",
-        flag: "",
+        flag: "/accreditedorganizations/flag/india.jpg",
         logo: "",
         layout: "left"
     },
