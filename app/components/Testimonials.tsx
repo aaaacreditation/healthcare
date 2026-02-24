@@ -30,7 +30,7 @@ export const Testimonials = () => {
             <div className="mx-auto max-w-4xl text-center mb-16">
                 <div className="bg-[#0a4373] text-white py-4 px-8 md:px-16 rounded-3xl inline-block shadow-md">
                     <h2 className="text-xl md:text-2xl font-bold tracking-wide">
-                        Be Part of our Accredited Cosmetology Clinics
+                        Be a part of our Accredited Organizations
                     </h2>
                 </div>
             </div>
