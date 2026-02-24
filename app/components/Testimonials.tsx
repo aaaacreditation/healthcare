@@ -39,9 +39,9 @@ export const Testimonials = () => {
                 {clinics.map((clinic, index) => (
                     <div key={index} className="flex items-center gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                         {/* Logo */}
-                        <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 p-2 text-center overflow-hidden">
+                        <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 p-3 text-center">
                             {clinic.logo ? (
-                                <img src={clinic.logo} alt={`${clinic.name} Logo`} className="w-full h-full object-cover" />
+                                <img src={clinic.logo} alt={`${clinic.name} Logo`} className="w-full h-full object-contain" />
                             ) : (
                                 <span className="text-xs text-gray-400 font-medium px-2">Logo Pending</span>
                             )}
