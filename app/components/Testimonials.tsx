@@ -5,44 +5,32 @@ const clinics = [
     {
         name: "Domus Salutis Clinic",
         location: "Legnago - Italy",
-        flag: "/accreditedorganizations/flag/italy.png",
         logo: "/accreditedorganizations/domus.jpeg",
-        layout: "left"
     },
     {
         name: "Debeauty Clinic",
         location: "Colorado - USA",
-        flag: "/accreditedorganizations/flag/usa.webp",
         logo: "/accreditedorganizations/debeauty.jpeg",
-        layout: "right"
     },
     {
         name: "Monarch Master Injectors",
         location: "Texas - USA",
-        flag: "/accreditedorganizations/flag/usa.webp",
         logo: "",
-        layout: "left"
     },
     {
         name: "ZSK Aesthetics",
         location: "Islamabad - Pakistan",
-        flag: "/accreditedorganizations/flag/pakistan.webp",
         logo: "",
-        layout: "right"
     },
     {
         name: "Indian Medical Aesthetic",
         location: "Mumbai - India",
-        flag: "/accreditedorganizations/flag/india.jpg",
         logo: "",
-        layout: "left"
     },
     {
         name: "Millennia Wellness",
         location: "Texas - USA",
-        flag: "/accreditedorganizations/flag/usa.webp",
         logo: "",
-        layout: "right"
     }
 ];
 
@@ -57,47 +45,25 @@ export const Testimonials = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16 max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 max-w-5xl mx-auto px-4">
                 {clinics.map((clinic, index) => (
-                    <div key={index} className="flex items-center justify-between w-full">
-                        {clinic.layout === 'left' ? (
-                            <>
-                                {/* Flag */}
-                                <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full overflow-hidden flex items-center justify-center bg-transparent">
-                                    {clinic.flag ? <img src={clinic.flag} alt="Flag" className="w-full h-full object-cover" /> : <div className="w-10 h-10 rounded-full bg-gray-200"></div>}
-                                </div>
-                                {/* Name */}
-                                <div className="flex-1 px-4 text-center">
-                                    <h3 className="text-base md:text-lg font-bold text-[#0a4373]">{clinic.name}</h3>
-                                    <p className="text-xs md:text-sm text-gray-500">{clinic.location}</p>
-                                </div>
-                                {/* Logo */}
-                                <div className="w-20 md:w-24 h-16 shrink-0 flex items-center justify-end">
-                                    {clinic.logo ? <img src={clinic.logo} alt="Logo" className="max-w-full max-h-full object-contain" /> : <div className="text-xs text-transparent">Logo</div>}
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                {/* Logo */}
-                                <div className="w-20 md:w-24 h-16 shrink-0 flex items-center justify-start">
-                                    {clinic.logo ? <img src={clinic.logo} alt="Logo" className="max-w-full max-h-full object-contain" /> : <div className="text-xs text-transparent">Logo</div>}
-                                </div>
-                                {/* Name */}
-                                <div className="flex-1 px-4 text-center">
-                                    <h3 className="text-base md:text-lg font-bold text-[#0a4373]">{clinic.name}</h3>
-                                    <p className="text-xs md:text-sm text-gray-500">{clinic.location}</p>
-                                </div>
-                                {/* Flag */}
-                                <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full overflow-hidden flex items-center justify-center bg-transparent">
-                                    {clinic.flag ? <img src={clinic.flag} alt="Flag" className="w-full h-full object-cover" /> : <div className="w-10 h-10 rounded-full bg-gray-200"></div>}
-                                </div>
-                            </>
-                        )}
+                    <div key={index} className="flex items-center gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        {/* Logo */}
+                        <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 p-2 text-center overflow-hidden">
+                            {clinic.logo ? (
+                                <img src={clinic.logo} alt={`${clinic.name} Logo`} className="w-full h-full object-cover" />
+                            ) : (
+                                <span className="text-xs text-gray-400 font-medium px-2">Logo Pending</span>
+                            )}
+                        </div>
+                        {/* Name */}
+                        <div className="flex-1">
+                            <h3 className="text-lg md:text-xl font-bold text-[#0a4373]">{clinic.name}</h3>
+                            <p className="text-sm md:text-base text-gray-500 mt-1">{clinic.location}</p>
+                        </div>
                     </div>
                 ))}
             </div>
-
-            {/* The "Partnering with Excellence" section has been removed entirely */}
         </Section>
     );
 };
