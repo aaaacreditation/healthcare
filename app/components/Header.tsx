@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/Button';
 import { Menu, X } from 'lucide-react';
+import { ApplicationModal } from './ApplicationModal';
 
 const navLinks = [
     { href: '#about', label: 'About Us' },
@@ -15,6 +16,7 @@ const navLinks = [
 
 export const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -38,7 +40,7 @@ export const Header = () => {
                             {link.label}
                         </Link>
                     ))}
-                    <Button size="sm">Apply Now</Button>
+                    <Button size="sm" onClick={() => setIsApplicationModalOpen(true)}>Apply Now</Button>
                 </nav>
 
                 {/* Mobile Toggle */}
@@ -70,13 +72,18 @@ export const Header = () => {
                             </Link>
                         ))}
                         <div className="pt-2 px-4">
-                            <Button size="sm" className="w-full">
+                            <Button size="sm" className="w-full" onClick={() => { setMobileOpen(false); setIsApplicationModalOpen(true); }}>
                                 Apply Now
                             </Button>
                         </div>
                     </nav>
                 </div>
             )}
+
+            <ApplicationModal
+                isOpen={isApplicationModalOpen}
+                onClose={() => setIsApplicationModalOpen(false)}
+            />
         </header>
     );
 };
