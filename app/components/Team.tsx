@@ -13,10 +13,10 @@ export const Team = () => {
         <Section className="bg-gray-50" id="team">
             <div className="mx-auto max-w-2xl lg:text-center mb-16">
                 <h2 className="text-base font-semibold leading-7 text-[#0a4373] uppercase tracking-wide">
-                    Our People
+                    Our Team
                 </h2>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    Meet the Leadership and Team
+                    Meet our Team
                 </p>
                 <p className="mt-4 text-lg text-gray-600">
                     Dedicated professionals committed to elevating healthcare standards worldwide.
