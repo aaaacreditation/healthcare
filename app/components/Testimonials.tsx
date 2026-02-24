@@ -13,19 +13,9 @@ const clinics = [
         logo: "/accreditedorganizations/debeauty.jpeg",
     },
     {
-        name: "Monarch Master Injectors",
-        location: "Texas - USA",
-        logo: "",
-    },
-    {
-        name: "ZSK Aesthetics",
-        location: "Islamabad - Pakistan",
-        logo: "",
-    },
-    {
-        name: "Indian Medical Aesthetic",
-        location: "Mumbai - India",
-        logo: "",
+        name: "Global Medical City",
+        location: "", // No location was provided for this one
+        logo: "/accreditedorganizations/globalmediaclcity.jpeg",
     },
     {
         name: "Millennia Wellness",
