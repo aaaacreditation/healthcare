@@ -9,6 +9,8 @@ const images = [
     { src: '/images/gallery-6.jpeg', alt: 'AAA Healthcare Accreditation 6' },
     { src: '/images/gallery-5.jpeg', alt: 'AAA Healthcare Accreditation 5' },
     { src: '/images/gallery-7.jpeg', alt: 'AAA Healthcare Accreditation 7' },
+    { src: '/images/gallery-8.jpeg', alt: 'AAA Healthcare Accreditation 8' },
+    { src: '/images/gallery-9.jpeg', alt: 'AAA Healthcare Accreditation 9' },
 ];
 
 // Duplicate the images to create seamless looping
