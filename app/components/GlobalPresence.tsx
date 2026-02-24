@@ -6,7 +6,7 @@ export const GlobalPresence = () => {
         <Section className="bg-[#0a4373] text-white">
             <div className="mx-auto max-w-2xl lg:max-w-none">
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">Leadership & Governance</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">AAA&apos;s Global Presence</h2>
                     <p className="mt-4 text-lg leading-8 text-gray-200 max-w-4xl mx-auto">
                         At its core, AAA is deeply committed to healthcare ensuring hospitals, clinics, and medical institutions meet the highest benchmarks of safety, service, and patient care. AAA’s story is one of connection, linking institutions to global best practices, fostering confidence in every certificate issued, and ultimately, building a new generation of trust.
                     </p>
