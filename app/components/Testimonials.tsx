@@ -3,6 +3,11 @@ import { Section } from './ui/Section';
 
 const clinics = [
     {
+        name: "Global Medical City",
+        location: "Cairo - Egypt",
+        logo: "/accreditedorganizations/globalmediaclcity.jpeg",
+    },
+    {
         name: "Domus Salutis Clinic",
         location: "Legnago - Italy",
         logo: "/accreditedorganizations/domus.jpeg",
@@ -13,14 +18,9 @@ const clinics = [
         logo: "/accreditedorganizations/debeauty.jpeg",
     },
     {
-        name: "Global Medical City",
-        location: "", // No location was provided for this one
-        logo: "/accreditedorganizations/globalmediaclcity.jpeg",
-    },
-    {
         name: "Millennia Wellness",
         location: "Texas - USA",
-        logo: "",
+        logo: "/accreditedorganizations/millennia.jpeg",
     }
 ];
 
