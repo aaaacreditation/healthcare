@@ -31,13 +31,6 @@ export const Hero = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left – Text Content */}
                     <div className="text-white">
-                        <div className="animate-fade-in-up">
-                            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-blue-200 ring-1 ring-white/20 mb-6">
-                                <Award className="h-4 w-4" />
-                                ISQua Accredited Standards
-                            </span>
-                        </div>
-
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up-delay-1">
                             Accreditation Designed for{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
@@ -77,8 +70,8 @@ export const Hero = () => {
                         </div>
                         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors mt-8">
                             <Globe2 className="h-8 w-8 text-cyan-300 mb-3" />
-                            <div className="text-3xl font-bold text-white">500+</div>
-                            <div className="text-sm text-blue-200 mt-1">Accredited Facilities</div>
+                            <div className="text-3xl font-bold text-white">100+</div>
+                            <div className="text-sm text-blue-200 mt-1">Surveyors</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
                             <img src="/isqua.png" alt="ISQua Logo" className="h-12 w-auto object-contain mb-3" />
