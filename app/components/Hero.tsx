@@ -74,7 +74,7 @@ export const Hero = () => {
                             <div className="text-sm text-blue-200 mt-1">Surveyors</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
-                            <img src="/isqua.png" alt="ISQua Logo" className="h-12 w-auto object-contain mb-3" />
+                            <img src="/isquaeea.jpg" alt="ISQua EEA Logo" className="h-12 w-auto object-contain mb-3" />
                             <div className="text-3xl font-bold text-white">ISQua</div>
                             <div className="text-sm text-blue-200 mt-1">Internationally Recognized</div>
                         </div>
