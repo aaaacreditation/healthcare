@@ -72,7 +72,7 @@ export const ApplicationModal = ({ isOpen, onClose }: ApplicationModalProps) => 
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-900/50 backdrop-blur-sm p-4 sm:p-6">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-900/50 backdrop-blur-sm p-4 sm:p-6">
             <div className="relative w-full max-w-3xl rounded-2xl bg-white shadow-2xl my-auto animate-fade-in-up">
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
