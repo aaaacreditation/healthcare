@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { sendApplicationNotification } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
     try {
@@ -37,6 +38,14 @@ export async function POST(request: NextRequest) {
                 website: website || null,
                 social: social || null,
             },
+        });
+
+        // Send email notification (non-blocking)
+        sendApplicationNotification({
+            orgName, city, state, zip, country,
+            contactPerson, role, phone, email,
+            orgType, employees: parseInt(employees),
+            website, social,
         });
 
         return NextResponse.json({ success: true, id: application.id }, { status: 201 });
