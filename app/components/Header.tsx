@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { ApplicationModal } from './ApplicationModal';
 
 const navLinks = [
+    { href: 'https://aaa-accreditation.org', label: 'Home' },
     { href: '#about', label: 'About Us' },
     { href: '#why-aaa', label: 'Why AAA' },
     { href: '#process', label: 'Process' },
@@ -21,7 +22,7 @@ export const Header = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <Link href="/" className="flex items-center gap-2">
+                <Link href="https://aaa-accreditation.org" className="flex items-center gap-2">
                     <img
                         src="/logo.png"
                         alt="AAA Healthcare Logo"
