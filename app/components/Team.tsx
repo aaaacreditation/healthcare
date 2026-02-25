@@ -31,7 +31,7 @@ const teamMembers = [
     {
         name: 'Orlando Santana',
         title: 'Board Member',
-        image: '/team/Orlando.jpeg',
+        image: '/team/orlando.png',
         bio: 'With over 30 years of experience in development, Health and Safety across multinational organizations including American Airlines as the International Safety Head Lead, Orlando brings a wealth of expertise and a deep commitment to quality education in accreditation.',
     },
     {
