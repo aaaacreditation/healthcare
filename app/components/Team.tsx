@@ -7,7 +7,7 @@ const teamMembers = [
     {
         name: 'Dr. Ruhina Khan',
         title: 'Business Development Manager – Healthcare Accreditation',
-        image: '/team/Ruhina.jpeg',
+        image: '/team/Ruhina.jpg',
         bio: 'Dr. Ruhina Khan is a healthcare operations strategist and accreditation expert dedicated to advancing international quality standards. She works closely with healthcare institutions to strengthen compliance, optimize systems, and build globally recognized credibility through structured, sustainable growth strategies.',
     },
     {
@@ -19,13 +19,13 @@ const teamMembers = [
     {
         name: 'Antonia Vitori',
         title: 'Healthcare Accreditation Surveyor',
-        image: '/team/Antonia.jpeg',
+        image: '/team/antonia.jpg',
         bio: 'Antonia brings many years of experience in the healthcare compliance sector and currently serves as an AAA Healthcare Accreditation Surveyor. She graduated from the Royal College of Surgeons in Ireland and is the Chief Governance, Risk and Compliance Officer at Brookhaven Healthcare Ireland. She previously held the position of Compliance, Quality and Safety Manager at Cowper Care Ireland.',
     },
     {
         name: 'Dr. Rodolfo Buccico',
         title: 'Accreditation Advisor',
-        image: '/team/Rodolfo.jpeg',
+        image: '/team/rodolfo.jpg',
         bio: 'Dr. Rodolfo Buccico is a seasoned medical and public health professional with extensive expertise in preventive medicine, epidemiology, and healthcare management. He currently serves as a Chief Medical Officer and advisor, bringing deep experience in public health strategy, real-world evidence, and patient-centred care. With a background in hygiene and preventive medicine from the Università Federico II di Napoli, he has held leadership roles including director of clinical services and senior healthcare administration.',
     },
     {
