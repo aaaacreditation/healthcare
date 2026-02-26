@@ -17,10 +17,10 @@ export const Footer = () => {
                             Delivering independent, international accreditation programs that build trust and confidence in healthcare quality and safety.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Linkedin size={20} /></a>
-                            <a href="#" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Twitter size={20} /></a>
-                            <a href="#" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Facebook size={20} /></a>
-                            <a href="#" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Instagram size={20} /></a>
+                            <a href="https://www.linkedin.com/company/aaa-accreditation" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Linkedin size={20} /></a>
+                            <a href="https://twitter.com/AAAccreditation" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Twitter size={20} /></a>
+                            <a href="https://www.facebook.com/AAA.Accreditations/" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Facebook size={20} /></a>
+                            <a href="https://www.instagram.com/aaa.accreditations/" className="text-gray-400 hover:text-[#0a4373] transition-colors"><Instagram size={20} /></a>
                         </div>
                     </div>
 
