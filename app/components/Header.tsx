@@ -9,7 +9,7 @@ import { ApplicationModal } from './ApplicationModal';
 const navLinks = [
     { href: 'https://aaa-accreditation.org', label: 'Home' },
     { href: '#about', label: 'About Us' },
-    { href: '#why-aaa', label: 'Why AAA' },
+    { href: '#standards', label: 'Standards' },
     { href: '#process', label: 'Process' },
     { href: '#gallery', label: 'Gallery' },
     { href: '#contact', label: 'Contact' },
