@@ -7,7 +7,7 @@ import { sendContactNotification } from '@/lib/email';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { firstName, lastName, email, organization, message } = body;
+        const { firstName, lastName, email, organization, message, source } = body;
 
         // Validate required fields
         if (!firstName || !lastName || !email || !message) {
@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
                 email,
                 organization: organization || null,
                 message,
+                source: source || 'healthcare',
             },
         });
 
@@ -42,14 +43,18 @@ export async function POST(request: NextRequest) {
     }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
     try {
         const session = await getServerSession(authOptions);
         if (!session) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
+        const { searchParams } = new URL(request.url);
+        const source = searchParams.get('source');
+
         const inquiries = await prisma.contactInquiry.findMany({
+            where: source ? { source } : undefined,
             orderBy: { createdAt: 'desc' },
         });
 

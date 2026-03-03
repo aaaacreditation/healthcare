@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
         const {
             orgName, city, state, zip, country,
             contactPerson, role, phone, email,
-            orgType, employees, website, social
+            orgType, employees, website, social, source
         } = body;
 
         // Validate required fields
@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
                 employees: parseInt(employees),
                 website: website || null,
                 social: social || null,
+                source: source || 'healthcare',
             },
         });
 
@@ -58,14 +59,18 @@ export async function POST(request: NextRequest) {
     }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
     try {
         const session = await getServerSession(authOptions);
         if (!session) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
+        const { searchParams } = new URL(request.url);
+        const source = searchParams.get('source');
+
         const applications = await prisma.application.findMany({
+            where: source ? { source } : undefined,
             orderBy: { createdAt: 'desc' },
         });
 

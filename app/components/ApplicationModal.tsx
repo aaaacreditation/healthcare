@@ -6,6 +6,7 @@ import { X, CheckCircle, Loader2 } from 'lucide-react';
 interface ApplicationModalProps {
     isOpen: boolean;
     onClose: () => void;
+    source?: string;
 }
 
 const countries = [
@@ -19,7 +20,7 @@ const organizationTypes = [
     "Training Institute", "Other"
 ];
 
-export const ApplicationModal = ({ isOpen, onClose }: ApplicationModalProps) => {
+export const ApplicationModal = ({ isOpen, onClose, source = 'healthcare' }: ApplicationModalProps) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState('');
@@ -52,7 +53,7 @@ export const ApplicationModal = ({ isOpen, onClose }: ApplicationModalProps) => 
             const res = await fetch('/api/applications', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
+                body: JSON.stringify({ ...data, source }),
             });
 
             if (!res.ok) throw new Error('Submission failed');
