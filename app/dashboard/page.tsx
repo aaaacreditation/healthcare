@@ -33,6 +33,7 @@ interface ContactInquiry {
     lastName: string;
     email: string;
     organization: string | null;
+    website: string | null;
     message: string;
     source: string;
     createdAt: string;
@@ -307,6 +308,12 @@ export default function DashboardPage() {
                                                 <Mail className="h-4 w-4 text-gray-400" />
                                                 <span>{contact.email}</span>
                                             </div>
+                                            {contact.website && (
+                                                <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                                                    <Globe2 className="h-4 w-4 text-gray-400" />
+                                                    <a href={contact.website} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{contact.website}</a>
+                                                </div>
+                                            )}
                                             <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700">
                                                 {contact.message}
                                             </div>

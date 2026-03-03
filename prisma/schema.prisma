@@ -33,6 +33,7 @@ model ContactInquiry {
   lastName     String
   email        String
   organization String?
+  website      String?
   message      String
   source       String   @default("healthcare")
   createdAt    DateTime @default(now())

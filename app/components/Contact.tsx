@@ -22,6 +22,7 @@ export const Contact = () => {
             lastName: formData.get('lastName'),
             email: formData.get('email'),
             organization: formData.get('organization'),
+            website: formData.get('website'),
             message: formData.get('message'),
         };
 
@@ -136,8 +137,13 @@ export const Contact = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1">Organization Name</label>
-                            <input type="text" id="organization" name="organization" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                            <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1">Organization Name*</label>
+                            <input type="text" id="organization" name="organization" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                        </div>
+
+                        <div>
+                            <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">Website*</label>
+                            <input type="url" id="website" name="website" required placeholder="https://" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                         </div>
 
                         <div>

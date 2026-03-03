@@ -7,7 +7,7 @@ import { sendContactNotification } from '@/lib/email';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { firstName, lastName, email, organization, message, source } = body;
+        const { firstName, lastName, email, organization, website, message, source } = body;
 
         // Validate required fields
         if (!firstName || !lastName || !email || !message) {
@@ -23,6 +23,7 @@ export async function POST(request: NextRequest) {
                 lastName,
                 email,
                 organization: organization || null,
+                website: website || null,
                 message,
                 source: source || 'healthcare',
             },
