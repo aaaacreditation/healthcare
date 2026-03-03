@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
 import { ShieldCheck, ClipboardCheck, Zap, Globe, TrendingUp, Plane } from 'lucide-react';
@@ -70,24 +69,6 @@ export const WhyAAA = () => {
                         </div>
                     ))}
                 </dl>
-            </div>
-            {/* Global Presence */}
-            <div className="mt-20 text-center">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl mb-4">
-                    Global Presence
-                </h3>
-                <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-                    AAA operates in more than <span className="font-semibold text-[#0a4373]">53 countries</span> across the globe, bringing world-class accreditation standards to healthcare facilities worldwide.
-                </p>
-                <div className="relative w-full max-w-4xl mx-auto">
-                    <Image
-                        src="/map.png"
-                        alt="AAA Global Operations Map — Present in over 53 countries"
-                        width={1200}
-                        height={600}
-                        className="w-full h-auto rounded-2xl shadow-lg"
-                    />
-                </div>
             </div>
             <div className="mt-16 flex justify-center">
                 <Button size="lg" onClick={() => setIsModalOpen(true)}>
