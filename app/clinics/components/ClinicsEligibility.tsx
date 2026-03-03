@@ -17,7 +17,7 @@ export const ClinicsEligibility = () => {
                     onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#08365d'; }}
                     onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#0a4373'; }}
                 >
-                    Apply for Hospital Accreditation
+                    Apply Now
                 </button>
             </div>
             <ApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="clinics" />
