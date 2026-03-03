@@ -63,9 +63,9 @@ export const ClinicsEvaluation = () => {
             </div>
 
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-6">
                     {evaluationAreas.map((area, index) => (
-                        <div key={index} className={`flex flex-col ${index === evaluationAreas.length - 1 ? 'lg:col-start-2' : ''}`}>
+                        <div key={index} className={`flex flex-col lg:col-span-2 ${index === 3 ? 'lg:col-start-2' : ''}`}>
                             <dt className="flex items-center gap-4 text-base font-semibold leading-7 text-gray-900 border-b border-gray-100 pb-4 mb-4">
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0a4373] text-white shadow-md">
                                     <area.icon className="h-6 w-6" aria-hidden="true" />
