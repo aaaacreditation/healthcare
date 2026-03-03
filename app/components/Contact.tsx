@@ -143,7 +143,7 @@ export const Contact = () => {
 
                         <div>
                             <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">Website*</label>
-                            <input type="url" id="website" name="website" required placeholder="https://" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                            <input type="text" id="website" name="website" required placeholder="www.example.com" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                         </div>
 
                         <div>

@@ -180,11 +180,11 @@ export const ApplicationModal = ({ isOpen, onClose, source = 'healthcare' }: App
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                     <div>
                                         <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">Website URL</label>
-                                        <input type="url" id="website" name="website" placeholder="https://" className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
+                                        <input type="text" id="website" name="website" placeholder="www.example.com" className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
                                     </div>
                                     <div>
                                         <label htmlFor="social" className="block text-sm font-medium text-gray-700 mb-1">Social Media / LinkedIn Page</label>
-                                        <input type="url" id="social" name="social" placeholder="https://" className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
+                                        <input type="text" id="social" name="social" placeholder="www.example.com" className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
                                     </div>
                                 </div>
                             </div>
