@@ -9,6 +9,7 @@ import { Testimonials } from "../components/Testimonials";
 import { ClinicsContact } from "./components/ClinicsContact";
 import { Footer } from "../components/Footer";
 import { Team } from "../components/Team";
+import { WhatsAppButton } from "../components/WhatsAppButton";
 
 export default function ClinicsPage() {
   return (
@@ -24,6 +25,7 @@ export default function ClinicsPage() {
       <Team />
       <ClinicsContact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
