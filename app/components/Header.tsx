@@ -42,6 +42,14 @@ export const Header = () => {
                                 {link.label}
                             </Link>
                         ))}
+                        <a
+                            href="https://calendly.com/aaa-accreditation/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md ring-1 ring-[#0a4373] text-[#0a4373] hover:bg-[#0a4373] hover:text-white transition-colors"
+                        >
+                            Book Free Consult
+                        </a>
                         <Button size="sm" onClick={() => setIsApplicationModalOpen(true)}>Apply Now</Button>
                     </nav>
 
@@ -73,7 +81,16 @@ export const Header = () => {
                                     {link.label}
                                 </Link>
                             ))}
-                            <div className="pt-2 px-4">
+                            <div className="pt-2 px-4 space-y-2">
+                                <a
+                                    href="https://calendly.com/aaa-accreditation/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setMobileOpen(false)}
+                                    className="inline-flex w-full items-center justify-center h-9 px-4 text-sm font-medium rounded-md ring-1 ring-[#0a4373] text-[#0a4373] hover:bg-[#0a4373] hover:text-white transition-colors"
+                                >
+                                    Book Free Consult
+                                </a>
                                 <Button size="sm" className="w-full" onClick={() => { setMobileOpen(false); setIsApplicationModalOpen(true); }}>
                                     Apply Now
                                 </Button>
