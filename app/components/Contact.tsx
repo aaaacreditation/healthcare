@@ -21,6 +21,7 @@ export const Contact = () => {
             firstName: formData.get('firstName'),
             lastName: formData.get('lastName'),
             email: formData.get('email'),
+            phone: formData.get('phone'),
             organization: formData.get('organization'),
             website: formData.get('website'),
             message: formData.get('message'),
@@ -134,6 +135,11 @@ export const Contact = () => {
                         <div>
                             <label htmlFor="contactEmail" className="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
                             <input type="email" id="contactEmail" name="email" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
+                        </div>
+
+                        <div>
+                            <label htmlFor="contactPhone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
+                            <input type="tel" id="contactPhone" name="phone" required className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0a4373] focus:border-transparent outline-none transition-all" />
                         </div>
 
                         <div>

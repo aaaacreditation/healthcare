@@ -142,8 +142,8 @@ export const ApplicationModal = ({ isOpen, onClose, source = 'healthcare' }: App
                                         <input type="text" id="contactPerson" name="contactPerson" required className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
                                     </div>
                                     <div>
-                                        <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">Role/Title</label>
-                                        <input type="text" id="role" name="role" className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
+                                        <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">Role/Title*</label>
+                                        <input type="text" id="role" name="role" required className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[#0a4373] focus:outline-none focus:ring-1 focus:ring-[#0a4373]" />
                                     </div>
                                     <div>
                                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Telephone*</label>

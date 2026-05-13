@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
         // Validate required fields
         if (!orgName || !city || !state || !zip || !country ||
-            !contactPerson || !phone || !email || !orgType || !employees) {
+            !contactPerson || !role || !phone || !email || !orgType || !employees) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
                 { status: 400 }
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
                 zip,
                 country,
                 contactPerson,
-                role: role || null,
+                role,
                 phone,
                 email,
                 orgType,

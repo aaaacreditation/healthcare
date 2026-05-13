@@ -32,6 +32,7 @@ interface ContactInquiry {
     firstName: string;
     lastName: string;
     email: string;
+    phone: string | null;
     organization: string | null;
     website: string | null;
     message: string;
@@ -241,30 +242,62 @@ export default function DashboardPage() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <Users className="h-4 w-4 text-gray-400" />
-                                                    <span><strong>Contact:</strong> {app.contactPerson}{app.role ? ` (${app.role})` : ''}</span>
+
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Organization</h4>
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                                                    <div><span className="text-gray-500">Name:</span> <span className="text-gray-900 font-medium">{app.orgName}</span></div>
+                                                    <div><span className="text-gray-500">Type:</span> <span className="text-gray-900 font-medium">{app.orgType}</span></div>
+                                                    <div><span className="text-gray-500">Employees:</span> <span className="text-gray-900 font-medium">{app.employees}</span></div>
+                                                    <div><span className="text-gray-500">City:</span> <span className="text-gray-900 font-medium">{app.city}</span></div>
+                                                    <div><span className="text-gray-500">State/Province:</span> <span className="text-gray-900 font-medium">{app.state}</span></div>
+                                                    <div><span className="text-gray-500">ZIP/Postal:</span> <span className="text-gray-900 font-medium">{app.zip}</span></div>
+                                                    <div><span className="text-gray-500">Country:</span> <span className="text-gray-900 font-medium">{app.country}</span></div>
                                                 </div>
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <Mail className="h-4 w-4 text-gray-400" />
-                                                    <span>{app.email}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <Phone className="h-4 w-4 text-gray-400" />
-                                                    <span>{app.phone}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <Globe2 className="h-4 w-4 text-gray-400" />
-                                                    <span>{app.city}, {app.state} {app.zip} – {app.country}</span>
-                                                </div>
-                                                {app.website && (
-                                                    <div className="flex items-center gap-2 text-gray-600">
-                                                        <Globe2 className="h-4 w-4 text-gray-400" />
-                                                        <a href={app.website} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{app.website}</a>
-                                                    </div>
-                                                )}
                                             </div>
+
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Primary Contact</h4>
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Users className="h-4 w-4 text-gray-400" />
+                                                        <span><span className="text-gray-500">Name:</span> <span className="text-gray-900 font-medium">{app.contactPerson}</span></span>
+                                                    </div>
+                                                    <div className="text-gray-600">
+                                                        <span className="text-gray-500">Role/Title:</span> <span className="text-gray-900 font-medium">{app.role || '—'}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Mail className="h-4 w-4 text-gray-400" />
+                                                        <a href={`mailto:${app.email}`} className="text-[#0a4373] hover:underline">{app.email}</a>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Phone className="h-4 w-4 text-gray-400" />
+                                                        <a href={`tel:${app.phone}`} className="text-[#0a4373] hover:underline">{app.phone}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {(app.website || app.social) && (
+                                                <div>
+                                                    <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Supporting Information</h4>
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                                                        {app.website && (
+                                                            <div className="flex items-center gap-2 text-gray-600">
+                                                                <Globe2 className="h-4 w-4 text-gray-400" />
+                                                                <span className="text-gray-500">Website:</span>
+                                                                <a href={app.website.startsWith('http') ? app.website : `https://${app.website}`} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{app.website}</a>
+                                                            </div>
+                                                        )}
+                                                        {app.social && (
+                                                            <div className="flex items-center gap-2 text-gray-600">
+                                                                <Globe2 className="h-4 w-4 text-gray-400" />
+                                                                <span className="text-gray-500">Social:</span>
+                                                                <a href={app.social.startsWith('http') ? app.social : `https://${app.social}`} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{app.social}</a>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
@@ -282,7 +315,7 @@ export default function DashboardPage() {
                                 <div className="space-y-4">
                                     {getActiveContacts().map((contact) => (
                                         <div key={contact.id} className="border border-gray-100 rounded-xl p-6 hover:shadow-sm transition-shadow">
-                                            <div className="flex items-start justify-between mb-3">
+                                            <div className="flex items-start justify-between mb-4">
                                                 <div>
                                                     <h3 className="text-lg font-bold text-gray-900">
                                                         {contact.firstName} {contact.lastName}
@@ -304,18 +337,41 @@ export default function DashboardPage() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-                                                <Mail className="h-4 w-4 text-gray-400" />
-                                                <span>{contact.email}</span>
-                                            </div>
-                                            {contact.website && (
-                                                <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-                                                    <Globe2 className="h-4 w-4 text-gray-400" />
-                                                    <a href={contact.website} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{contact.website}</a>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm mb-4">
+                                                <div className="flex items-center gap-2 text-gray-600">
+                                                    <Users className="h-4 w-4 text-gray-400" />
+                                                    <span><span className="text-gray-500">Name:</span> <span className="text-gray-900 font-medium">{contact.firstName} {contact.lastName}</span></span>
                                                 </div>
-                                            )}
-                                            <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700">
-                                                {contact.message}
+                                                <div className="flex items-center gap-2 text-gray-600">
+                                                    <Mail className="h-4 w-4 text-gray-400" />
+                                                    <a href={`mailto:${contact.email}`} className="text-[#0a4373] hover:underline">{contact.email}</a>
+                                                </div>
+                                                {contact.phone && (
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Phone className="h-4 w-4 text-gray-400" />
+                                                        <a href={`tel:${contact.phone}`} className="text-[#0a4373] hover:underline">{contact.phone}</a>
+                                                    </div>
+                                                )}
+                                                {contact.organization && (
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Building2 className="h-4 w-4 text-gray-400" />
+                                                        <span><span className="text-gray-500">Organization:</span> <span className="text-gray-900 font-medium">{contact.organization}</span></span>
+                                                    </div>
+                                                )}
+                                                {contact.website && (
+                                                    <div className="flex items-center gap-2 text-gray-600">
+                                                        <Globe2 className="h-4 w-4 text-gray-400" />
+                                                        <a href={contact.website.startsWith('http') ? contact.website : `https://${contact.website}`} target="_blank" rel="noopener noreferrer" className="text-[#0a4373] hover:underline truncate">{contact.website}</a>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            <div>
+                                                <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Message</h4>
+                                                <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700 whitespace-pre-wrap">
+                                                    {contact.message}
+                                                </div>
                                             </div>
                                         </div>
                                     ))}

@@ -73,7 +73,9 @@ export async function sendContactNotification(data: {
     firstName: string;
     lastName: string;
     email: string;
+    phone?: string;
     organization?: string;
+    website?: string;
     message: string;
 }) {
     try {
@@ -93,7 +95,9 @@ export async function sendContactNotification(data: {
                         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                             <tr><td style="padding: 8px 0; color: #6b7280; width: 40%;">Name</td><td style="padding: 8px 0; font-weight: bold; color: #111827;">${data.firstName} ${data.lastName}</td></tr>
                             <tr style="background: #f9fafb;"><td style="padding: 8px; color: #6b7280;">Email</td><td style="padding: 8px; font-weight: bold; color: #111827;"><a href="mailto:${data.email}" style="color: #0a4373;">${data.email}</a></td></tr>
-                            ${data.organization ? `<tr><td style="padding: 8px 0; color: #6b7280;">Organization</td><td style="padding: 8px 0; font-weight: bold; color: #111827;">${data.organization}</td></tr>` : ''}
+                            ${data.phone ? `<tr><td style="padding: 8px 0; color: #6b7280;">Phone</td><td style="padding: 8px 0; font-weight: bold; color: #111827;">${data.phone}</td></tr>` : ''}
+                            ${data.organization ? `<tr style="background: #f9fafb;"><td style="padding: 8px; color: #6b7280;">Organization</td><td style="padding: 8px; font-weight: bold; color: #111827;">${data.organization}</td></tr>` : ''}
+                            ${data.website ? `<tr><td style="padding: 8px 0; color: #6b7280;">Website</td><td style="padding: 8px 0; font-weight: bold; color: #111827;">${data.website}</td></tr>` : ''}
                         </table>
 
                         <h2 style="color: #0a4373; font-size: 16px; margin-top: 24px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Message</h2>

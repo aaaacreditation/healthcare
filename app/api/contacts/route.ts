@@ -7,10 +7,10 @@ import { sendContactNotification } from '@/lib/email';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { firstName, lastName, email, organization, website, message, source } = body;
+        const { firstName, lastName, email, phone, organization, website, message, source } = body;
 
         // Validate required fields
-        if (!firstName || !lastName || !email || !message) {
+        if (!firstName || !lastName || !email || !phone || !organization || !website || !message) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
                 { status: 400 }
@@ -22,8 +22,9 @@ export async function POST(request: NextRequest) {
                 firstName,
                 lastName,
                 email,
-                organization: organization || null,
-                website: website || null,
+                phone,
+                organization,
+                website,
                 message,
                 source: source || 'healthcare',
             },
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
 
         // Send email notification (non-blocking)
         sendContactNotification({
-            firstName, lastName, email, organization, message,
+            firstName, lastName, email, phone, organization, website, message,
         });
 
         return NextResponse.json({ success: true, id: inquiry.id }, { status: 201 });
